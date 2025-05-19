@@ -1,0 +1,25 @@
+from flask import Flask, render_template
+
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/iklim_degisikligi_nedir')
+def iklim_degisikligi_nedir():
+    return render_template('ikincisayfa.html')
+
+@app.route('/İklim_degisikligi_nasıl_olusur')
+def İklim_degisikligi_nasıl_olusur():
+    return render_template('ucuncusayfas.html')
+
+@app.route('/İklim_degisikliginin_onune_nasıl_geceris')
+def İklim_degisikliginin_onune_nasıl_geceris():
+    return render_template('dorduncusayfa.html')
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
